@@ -28,7 +28,7 @@ describe('hotColdReducer', () => {
     });
 
     describe('newGame', () => {
-      it('Should resest state to the initial state', () => {
+      it('Should reset state to the initial state', () => {
         const state = hotColdReducer(gameplayState, newGame());
         const correctAnswer = state.correctAnswer;
         expect(state).toEqual({
@@ -40,12 +40,12 @@ describe('hotColdReducer', () => {
       });
     });
     describe('makeGuess', () => {
-      const guess = -1; //make impossible guess so state.guess is never equal
+      const guess = 33;
 
       it('Should add the guess to state guesses[]', () => {
         const state = hotColdReducer(gameplayState, makeGuess(guess));
         //check that an element was added to guesses[]
-        expect(state.guesses.length).toEqual(++gameplayState.guesses.length);
+        expect(state.guesses.length).toEqual(gameplayState.guesses.length + 1);
         //check that the last element was the guess value
         expect(state.guesses[state.guesses.length-1]).toEqual(guess);
       });
@@ -63,11 +63,12 @@ describe('hotColdReducer', () => {
         expect(gameplayFeedback).toEqual(stateFeedback);
       });
     });
-    // describe('toggleInfoModal', () => {
-    //   it('Should have the correct value for toggle', () => {
-    //
-    //   });
-    // });
+    describe('toggleInfoModal', () => {
+      it('Should have the correct value for toggle', () => {
+        const state = hotColdReducer(gameplayState, toggleInfoModal());
+        expect(gameplayState.showInfoModal).toEqual(!state.showInfoModal);
+      });
+    });
 });
 
 

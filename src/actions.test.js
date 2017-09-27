@@ -1,6 +1,11 @@
-import {newGame, NEW_GAME,
-        makeGuess, MAKE_GUESS,
-        toggleInfoModal, TOGGLE_INFO_MODAL} from './actions';
+import {
+  newGame, 
+  NEW_GAME,
+  makeGuess,
+  MAKE_GUESS,
+  toggleInfoModal,
+  TOGGLE_INFO_MODAL
+} from './actions';
 
 describe('newGame', () => {
   it('Should return the action', () => {
