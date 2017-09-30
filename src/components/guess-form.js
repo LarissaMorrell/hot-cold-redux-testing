@@ -12,7 +12,6 @@ export class GuessForm extends React.Component {
   }
   render() {
     return (
-
       <form onSubmit={e => this.submitGuess(e)}>
         <input type="text" name="userGuess" id="userGuess"
           className="text" maxLength="3" autoComplete="off"

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import GuessForm from './guess-form';
+import {GuessForm} from './guess-form';
 
 import './guess-section.css';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect} from 'react-redux';
-
 import './guess-list.css';
 
 export function GuessList(props) {
@@ -9,7 +8,6 @@ export function GuessList(props) {
             {guess}
         </li>
     ));
-
     return (
         <ul id="guessList" className="guessBox clearfix">
             {guesses}
